@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <label>Create User</label>
+            <input type="text" class="form-control" #ref [(ngModel)]="userName"/>
+            <div>two way:{{userName}}</div>
+        </div>
+        <div>
+            <button (click)="onAddUser()">Add User</button>
+        </div>
+    <!-- <div>{{ref.value}}</div> -->
+        <div><app-users #user></app-users></div>
+        <div>
+            <!-- <button (click)="onAddUser(ref)">Add User</button> -->
+            <!-- <button (click)="onAddUser(user)">Add User</button> -->
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <ng-content></ng-content>
+    <div>Start</div>
+    <div>End</div>
+    <ng-content select="[question]"></ng-content>
+</div>

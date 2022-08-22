@@ -1,0 +1,13 @@
+<div class="box">
+<div>
+    <div>Id:{{user.id}}</div>
+    <div>Name:{{user.name}}</div>
+    <div>Email:{{user.email}}</div>
+    <div>Phone:{{user.phone}}</div>
+</div>
+<div class="my-2">
+    <a class="btn btn-warning btn-sm mx-2" routerLink="/edituser/{{user.id}}">Edit</a>
+    <!-- <a class="btn btn-danger btn-sm mx-2" routerLink="/delete/{{user.id}}">Delete</a> -->
+    <button class="btn btn-danger btn-sm mx-2" (click)="onDelete()">Delete</button>
+</div>
+</div>

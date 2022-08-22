@@ -1,0 +1,12 @@
+<h3>Please fill the form</h3>
+<div>
+    <label>Title</label>
+    <input type="text" class="form-control" [(ngModel)]="title">
+</div>
+<div>
+    <label>Description</label>
+    <textarea class="form-control" [(ngModel)]="description"></textarea>
+</div>
+<div>
+    <button class="my-2"(click)="saveToTable()">save</button>
+</div>

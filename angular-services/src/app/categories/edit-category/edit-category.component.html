@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Update the Category Details</h3>
+    <div>
+        <label>Title</label>
+        <input type="text" class="form-control" [(ngModel)]="title">
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea class="form-control" [(ngModel)]="description"></textarea>
+    </div>
+    <div>
+        <button class="btn btn-warning my-2" (click)="onUpdateCategory()">update</button>
+        <button class="btn btn-dark text-white mx-2" (click)="goBack()">GoBackToCategories</button>
+    </div>
+    </div>

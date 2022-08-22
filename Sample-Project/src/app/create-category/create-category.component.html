@@ -1,0 +1,35 @@
+<div>
+    <h1>Create Category</h1>
+    <!-- <button [class]="classNames">Add Category</button> -->
+    <!-- <button [attr.class]="classNames">Add Category</button> -->
+    <!-- <button class="btn" [class.btn-sm]="isButtonSmall" [class.btn-primary]="isButtonPrimary">Add Category</button> -->
+    <!-- <button class="btn" [ngClass]="buttonClasses">Add Category</button> -->
+    <button class="btn" [ngClass]="applyClasses()">Add Category</button>
+    <button (click)="onButtonClick()" class="mx-5">Make Button Smaller</button>
+
+
+    <div [ngStyle]="{'background-color':boxBackgroundColor, 'color':boxTextColor}">I want this background black and text white</div>
+    <button (click)="onButtonClick1()">DoOperation</button>
+
+    <ng-template [ngIf]="showContent">
+        <div>Kameswari</div>
+    </ng-template>
+
+    <!-- <div class="my-5">
+        <button class="btn btn-primary btn-sm" (click)="onCreateUser()">AddUser</button>
+        <div *ngIf="isUserCreated; else elseBlock">User is created</div>
+        <ng-template #elseBlock><div *ngIf="!isUserCreated">Click on the button AddUser to create</div></ng-template>
+    </div> -->
+    <div class="my-5">
+        <button class="btn btn-primary btn-sm" (click)="onCreateUser()">AddUser</button>
+        <div *ngIf="isUserCreated; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock>
+            <div>User is created</div>
+            <div>kameswari</div>
+        </ng-template>
+        <ng-template #elseBlock>
+            <div>User can't be created</div>
+            <div>Click on the button AddUser to create</div>
+        </ng-template>
+    </div>
+</div>        

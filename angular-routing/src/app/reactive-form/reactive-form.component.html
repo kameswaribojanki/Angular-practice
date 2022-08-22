@@ -1,0 +1,31 @@
+<form [formGroup]="signUpForm" (ngSubmit)="onFormSubmit()">
+    <div class="my-3">
+        <label for="">Name</label>
+        <input type="text" class="form-control" formControlName="name" minlength="3" maxlength="8">
+        <!-- <div *ngIf="signUpForm.get('name')?.touched">
+            <span *ngIf="signUpForm.get('name')?.errors?.['required']">Please enter name</span>
+            <span *ngIf="signUpForm.get('name')?.errors?.['minlength']">Please enter minimum 3 characters</span>
+            <span *ngIf="signUpForm.get('name')?.errors?.['maxlength']">Please enter maximum 8 characters</span>
+        </div> -->
+        <div *ngIf="nameError">{{nameError}}</div>
+        
+    </div>
+    <div class="my-3">
+        <label for="">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <div *ngIf="signUpForm.get('email')?.touched">
+            <span *ngIf="signUpForm.get('email')?.errors?.['required']">Please enter email</span>
+            <span *ngIf="signUpForm.get('email')?.errors?.['email']">Please enter valid email</span>
+        </div>
+        <!-- <div *ngIf="emailError">{{emailError}}</div> -->
+    </div>
+    <div class="my-3" formArrayName="hobbies">
+        <button class="btn btn-primary" (click)="onAddHobby()" type="button">Add Hobby</button>
+        <div class="my-3" *ngFor="let hobby of hobbiesControl.controls; let i=index">
+            <input type="text" class="form-control" [formControlName]="i">
+        </div>
+    </div>  
+    <div class="my-3">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>

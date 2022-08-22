@@ -1,0 +1,14 @@
+<ul>
+    <li>
+        <a [routerLink]="['/users',1,'AA']" [queryParams]="{name:'AA', hai:'AA'}">go to AA user</a>
+    </li>
+    <li>
+        <a [routerLink]="['/users',2,'BB']" [queryParams]="{name:'BB', hai:'BB'}">go to BB user</a>
+    </li>
+    <li>
+        <a [routerLink]="['/users',3,'CC']" [queryParams]="{name:'CC', hai:'CC'}">go to CC user</a>
+    </li>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</ul>

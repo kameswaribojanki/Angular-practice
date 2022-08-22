@@ -1,0 +1,51 @@
+<div>
+    <h1>Categories</h1>
+</div>
+<ng-template [ngIf]="showButton">
+<div  class="addCategories">
+    <button (click)="onAddCategorySelect()">AddCategories</button>
+</div>
+</ng-template>
+
+
+<ng-template [ngIf]="showForm">
+        <div class="row">
+                <div class="col-md-12">
+                    <app-add-category (categoryAdded)="onCategoryAdd($event)"></app-add-category>
+                </div>
+            </div>
+</ng-template>
+
+
+<div class="row">
+<ng-template [ngIf]="showTable">
+    <div class="col-md-12">
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr app-single-category *ngFor="let category of categories" [category]="category" (categorySelected)="onCategorySelected($event)" (categoryEdited)="onCategoryEdited($event)" (categoryDeleted)="onCategoryDeleted($event)">
+                    </tr>
+                </tbody>
+            </table>
+        </div>   
+    </div>
+</ng-template>
+    <div class="col-md-12">
+        <ng-container *ngIf="showViewCondition">
+            <app-view-category *ngIf="selectedCategory" [category]="selectedCategory" (goToCategory)="hideViewShowTable($event)"></app-view-category>
+        </ng-container>
+        <ng-container *ngIf="showEditCondition">
+            <app-edit-category *ngIf="editedCategory" [category]="editedCategory" (categoryUpdated)="onUpdateCategory($event)" (goToCategory)="hideEditShowTable($event)"></app-edit-category>
+        </ng-container>
+    </div>
+</div>
+
+

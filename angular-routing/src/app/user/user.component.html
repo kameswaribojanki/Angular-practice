@@ -1,0 +1,11 @@
+<div class="container text-center bg-warning">
+    <h3>Users</h3>
+    <div>Id:{{id}}</div>
+    <div>Name:{{name}}</div>
+    <!-- <div>
+        <a [routerLink]="['/users', id, name, 'edit']" queryParamsHandling="preserve">edit</a>
+    </div> -->
+    <div>
+        <button (click)="onEditUser()">Edit User</button>
+    </div>
+</div>

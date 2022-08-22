@@ -1,0 +1,19 @@
+<h3>User Details</h3>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let user of users; index as i; even as even; odd as odd; count as count; first as first; last as last' [ngClass]='{even:even, odd:odd, first:first, last:last}'>
+                <td>{{i+1}} {{count}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

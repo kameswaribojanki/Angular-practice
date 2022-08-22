@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3>Users List</h3>
+        <div *ngIf="selectedUser">Selected User:{{selectedUser.name}}</div>
+        <div class="row">
+            <!-- <div class="col-md-4" *ngFor="let user of users">
+                <div class="box my-3 p-2">
+                    <div>Id:{{user.id}}</div>
+                    <div>Name:{{user.name}}</div>
+                    <div>Address:{{user.address}}</div>
+                    <div>Occupation:{{user.occupation}}</div>
+                </div>
+            </div> -->
+            <app-user *ngFor="let user of users; trackBy:trackUser" (userSelected)="onUserSelect($event)" [user]="user"></app-user>
+        </div>
+    </div>
+</div>
